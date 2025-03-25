@@ -1,4 +1,4 @@
-cine2doseg API
+**cine2doseg API**
 cine2doseg es una API RESTful desarrollada con ASP.NET Core para gestionar la información de sucursales de un cine. Este proyecto interactúa con una base de datos MySQL y proporciona endpoints para obtener y gestionar las sucursales de un cine.
 
 Descripción
@@ -20,7 +20,6 @@ Uso de Model-View-Controller (MVC) y dependencias para la gestión de la lógica
 
 Características
 Base de datos:
-
 Creación de la base de datos cine con la tabla sucursal.
 
 Implementación de una vista vwRptSucursales para listar todas las sucursales.
@@ -28,7 +27,6 @@ Implementación de una vista vwRptSucursales para listar todas las sucursales.
 Procedimiento almacenado spInsSucursales para insertar nuevas sucursales, con validaciones para evitar nombres o URLs duplicados.
 
 API:
-
 Endpoint GET /cine/sucursal/vwrptsucursales para obtener todas las sucursales.
 
 Endpoint POST /cine/sucursal/spinssucursales para insertar una nueva sucursal, con respuestas basadas en el resultado de la inserción.
