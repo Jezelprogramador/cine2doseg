@@ -1,32 +1,54 @@
-**cine2doseg API**
-cine2doseg es una API RESTful desarrollada con ASP.NET Core para gestionar la información de sucursales de un cine. Este proyecto interactúa con una base de datos MySQL y proporciona endpoints para obtener y gestionar las sucursales de un cine.
+# cine2doseg API
 
-Descripción
-Este proyecto consta de dos partes principales:
+**cine2doseg** es una API RESTful desarrollada con ASP.NET Core para la gestión de sucursales de cines.
 
-Base de datos MySQL:
+## Descripción
 
-Una base de datos llamada cine para almacenar información sobre las sucursales de un cine.
+* **Base de datos MySQL**:
+  * Base de datos: `cine`
+  * Tabla principal: `sucursal`
+    * Campos: nombre, dirección, URL, logo
+  * Vista: `vwRptSucursales`
+  * Stored Procedure: `spInsSucursales`
 
-Tabla sucursal que contiene detalles como nombre, dirección, URL del sitio web y logo.
+* **API ASP.NET Core**:
+  * Arquitectura MVC
+  * Patrón Repository
+  * Endpoints RESTful
 
-Procedimientos almacenados y vistas para facilitar la manipulación de datos.
+## Características principales
 
-API Web en ASP.NET Core:
+### Base de datos
+* Estructura relacional optimizada
+* Validaciones de integridad
+* Vistas para consultas complejas
+* Stored procedures para operaciones críticas
 
-Exposición de endpoints que permiten obtener y agregar sucursales de cine.
+### API
+* Documentación Swagger integrada
+* Manejo centralizado de errores
+* Validación de modelos
+* Soporte para CORS
 
-Uso de Model-View-Controller (MVC) y dependencias para la gestión de la lógica de negocio.
+## Configuración
 
-Características
-Base de datos:
-Creación de la base de datos cine con la tabla sucursal.
+1. **Requisitos**:
+   * .NET 6.0+
+   * MySQL 8.0+
+   * Visual Studio 2022 (opcional)
 
-Implementación de una vista vwRptSucursales para listar todas las sucursales.
+2. **Pasos de instalación**:
+   * Clonar repositorio
+   * Configurar connection string
+   * Ejecutar migraciones
+   * Iniciar aplicación
 
-Procedimiento almacenado spInsSucursales para insertar nuevas sucursales, con validaciones para evitar nombres o URLs duplicados.
+## Endpoints
 
-API:
-Endpoint GET /cine/sucursal/vwrptsucursales para obtener todas las sucursales.
-
-Endpoint POST /cine/sucursal/spinssucursales para insertar una nueva sucursal, con respuestas basadas en el resultado de la inserción.
+| Método | Endpoint                | Descripción                 |
+|--------|-------------------------|-----------------------------|
+| GET    | /api/sucursales         | Listar todas las sucursales |
+| POST   | /api/sucursales         | Crear nueva sucursal        |
+| GET    | /api/sucursales/{id}    | Obtener sucursal específica |
+| PUT    | /api/sucursales/{id}    | Actualizar sucursal         |
+| DELETE | /api/sucursales/{id}    | Eliminar sucursal           |
